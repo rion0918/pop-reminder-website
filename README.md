@@ -2,7 +2,7 @@
 
 リマインダーアプリ「ふわっと。」の公式プロモーションサイトです。
 
-- 公開サイト: <https://pop-reminder.pages.dev/>
+- 公開サイト: <https://fuwatto.pages.dev/>
 - アプリ本体: <https://github.com/rion0918/pop-reminder>
 - ホスティング: Cloudflare Pages
 
@@ -65,7 +65,7 @@ npm run dev
 
 ## 公開とSEO
 
-本番URLは <https://pop-reminder.pages.dev/> です。canonical、OGP、構造化データ、`robots.txt`、`sitemap.xml`はこのURLを正本にしています。
+本番URLは <https://fuwatto.pages.dev/> です。canonical、OGP、構造化データ、`robots.txt`、`sitemap.xml`はこのURLを正本にしています。
 
 独自ドメインへ変更する場合は、URLを一括で差し替えてから公開してください。詳しい手順は次を参照してください。
 

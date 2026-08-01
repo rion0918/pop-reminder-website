@@ -4,8 +4,8 @@
 
 | 項目 | 値 |
 | --- | --- |
-| Cloudflare Pagesプロジェクト | `pop-reminder` |
-| 本番URL | <https://pop-reminder.pages.dev/> |
+| Cloudflare Pagesプロジェクト | `fuwatto` |
+| 本番URL | <https://fuwatto.pages.dev/> |
 | 本番ブランチ | `main` |
 | ビルドコマンド | `npm run build` |
 | 出力ディレクトリ | `dist` |
@@ -15,13 +15,19 @@
 
 このPagesプロジェクトはWranglerから作成したDirect Upload方式です。Cloudflareの仕様上、同じプロジェクトを後からネイティブGit連携へ変更することはできません。そのため、本番URLを維持した自動デプロイにはGitHub ActionsからWranglerを実行します。
 
+## `pop-reminder`からの移行
+
+Cloudflare Pagesの既存プロジェクト名は直接変更できないため、2026年8月1日に`fuwatto`プロジェクトを新規作成して本番を移行しました。D1の`pop-reminder-waitlist`は同じデータベースを継続利用します。
+
+旧`pop-reminder`プロジェクトは削除せず、`legacy/pop-reminder/_redirects`だけを配信して新URLへHTTP 301で転送します。通常のサイトは旧プロジェクトへデプロイしないでください。
+
 ## 通常のリリースフロー
 
 1. 作業ブランチで変更する。
 2. `npm run verify`を実行する。
 3. Pull Requestを作成し、CI結果と表示を確認する。
 4. `main`へマージする。
-5. GitHub ActionsがD1マイグレーションを適用し、`dist/`とPages Functionsを`pop-reminder`へデプロイする。
+5. GitHub ActionsがD1マイグレーションを適用し、`dist/`とPages Functionsを`fuwatto`へデプロイする。
 6. 本番URLと法務ページ、OGP画像を確認する。
 
 ## GitHub Actionsに必要なSecrets
@@ -49,12 +55,12 @@ npm run deploy:cloudflare
 ## リリース確認
 
 ```bash
-curl -fsSIL https://pop-reminder.pages.dev/
-curl -fsSIL https://pop-reminder.pages.dev/privacy
-curl -fsSIL https://pop-reminder.pages.dev/terms
-curl -fsSIL https://pop-reminder.pages.dev/assets/og-image-dream.png
-curl -fsSIL https://pop-reminder.pages.dev/sitemap.xml
-curl -fsSI https://pop-reminder.pages.dev/api/waitlist
+curl -fsSIL https://fuwatto.pages.dev/
+curl -fsSIL https://fuwatto.pages.dev/privacy
+curl -fsSIL https://fuwatto.pages.dev/terms
+curl -fsSIL https://fuwatto.pages.dev/assets/og-image-dream.png
+curl -fsSIL https://fuwatto.pages.dev/sitemap.xml
+curl -fsSI https://fuwatto.pages.dev/api/waitlist
 ```
 
 確認項目:
@@ -69,7 +75,7 @@ curl -fsSI https://pop-reminder.pages.dev/api/waitlist
 
 ## ロールバック
 
-1. Cloudflare Dashboardで `Workers & Pages > pop-reminder > Deployments` を開く。
+1. Cloudflare Dashboardで `Workers & Pages > fuwatto > Deployments` を開く。
 2. 最後に正常だった本番デプロイを選ぶ。
 3. `Rollback to this deployment` を実行する。
 4. 本番URLを再確認する。
@@ -89,6 +95,7 @@ curl -fsSI https://pop-reminder.pages.dev/api/waitlist
 
 - [Cloudflare Pages: Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)
 - [Cloudflare Pages: Direct Upload with CI](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/)
+- [Cloudflare Pages: Redirects](https://developers.cloudflare.com/pages/configuration/redirects/)
 - [Cloudflare Pages Functions](https://developers.cloudflare.com/pages/functions/)
 - [Cloudflare Pages FunctionsのD1バインディング](https://developers.cloudflare.com/pages/functions/bindings/)
 - [Cloudflare D1 migrations](https://developers.cloudflare.com/d1/reference/migrations/)

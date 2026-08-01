@@ -2,13 +2,13 @@
 
 ## URLの正本
 
-現在の正規ドメインは `https://pop-reminder.pages.dev` です。
+現在の正規ドメインは `https://fuwatto.pages.dev` です。
 
 | ページ | canonical |
 | --- | --- |
-| トップ | `https://pop-reminder.pages.dev/` |
-| プライバシーポリシー | `https://pop-reminder.pages.dev/privacy` |
-| 利用規約 | `https://pop-reminder.pages.dev/terms` |
+| トップ | `https://fuwatto.pages.dev/` |
+| プライバシーポリシー | `https://fuwatto.pages.dev/privacy` |
+| 利用規約 | `https://fuwatto.pages.dev/terms` |
 
 ## SEO関連ファイル
 
@@ -53,7 +53,7 @@ npm run check
 次のファイルにある旧ドメインを新しい正規ドメインへ一括で変更します。
 
 ```bash
-rg -n "pop-reminder\.pages\.dev" index.html privacy.html terms.html robots.txt sitemap.xml README.md docs
+rg -n "fuwatto\.pages\.dev" index.html privacy.html terms.html robots.txt sitemap.xml README.md docs
 ```
 
 変更対象:

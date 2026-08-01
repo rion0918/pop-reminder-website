@@ -32,11 +32,11 @@ class MockDatabase {
 }
 
 const request = (method, body, headers = {}) =>
-  new Request('https://pop-reminder.pages.dev/api/waitlist', {
+  new Request('https://fuwatto.pages.dev/api/waitlist', {
     method,
     headers: {
       'content-type': 'application/json',
-      origin: 'https://pop-reminder.pages.dev',
+      origin: 'https://fuwatto.pages.dev',
       ...headers,
     },
     body: method === 'GET' ? undefined : JSON.stringify(body),

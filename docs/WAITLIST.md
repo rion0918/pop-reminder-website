@@ -11,9 +11,9 @@
 投稿するURLには`utm_source`、`utm_medium`、`utm_campaign`を付けます。投稿単位で分けたい場合だけ`utm_content`を追加します。
 
 ```text
-https://pop-reminder.pages.dev/?utm_source=x&utm_medium=social&utm_campaign=launch
-https://pop-reminder.pages.dev/?utm_source=instagram&utm_medium=social&utm_campaign=launch
-https://pop-reminder.pages.dev/?utm_source=tiktok&utm_medium=social&utm_campaign=launch
+https://fuwatto.pages.dev/?utm_source=x&utm_medium=social&utm_campaign=launch
+https://fuwatto.pages.dev/?utm_source=instagram&utm_medium=social&utm_campaign=launch
+https://fuwatto.pages.dev/?utm_source=tiktok&utm_medium=social&utm_campaign=launch
 ```
 
 UTM値には個人名やメールアドレスなどを入れないでください。短く一貫した英小文字を使うと集計しやすくなります。

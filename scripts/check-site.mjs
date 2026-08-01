@@ -28,7 +28,7 @@ const requiredPatterns = [
   ['Japanese language declaration', /<html lang="ja">/],
   ['page title', /<title>[^<]+<\/title>/],
   ['meta description', /<meta\s+name="description"/],
-  ['canonical URL', /rel="canonical"/],
+  ['fuwatto canonical URL', /rel="canonical" href="https:\/\/fuwatto\.pages\.dev\/"/],
   ['Open Graph image', /property="og:image"/],
   ['structured data', /application\/ld\+json/],
   ['single primary heading', /<h1\b/],
@@ -82,6 +82,7 @@ if (routes.include?.length !== 1 || routes.include[0] !== '/api/*') {
   failures.push('Pages Functions routes must only include /api/*');
 }
 if (!/binding = "WAITLIST_DB"/.test(wrangler)) failures.push('Missing WAITLIST_DB binding');
+if (!/^name = "fuwatto"$/m.test(wrangler)) failures.push('Pages project must be fuwatto');
 if (!/pages_build_output_dir = "dist"/.test(wrangler)) failures.push('Missing Pages output directory');
 if (/request\.cf|cf-connecting-ip|user-agent/i.test(waitlistFunction)) {
   failures.push('Waitlist API must not collect IP or User-Agent data');
