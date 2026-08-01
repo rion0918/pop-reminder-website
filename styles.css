@@ -932,6 +932,20 @@ a {
   background: #f2f0fb;
 }
 
+.features .section-heading {
+  max-width: 1040px;
+}
+
+.features .section-heading h2 {
+  font-size: clamp(2.7rem, 5.4vw, 4.8rem);
+}
+
+.feature-title-break,
+.notification-title-break,
+.widget-title-break {
+  display: none;
+}
+
 .bento-grid {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
@@ -1003,7 +1017,7 @@ a {
 
 .bubble-board {
   position: absolute;
-  inset: 43% 0 0;
+  inset: 50% 0 0;
 }
 
 .feature-bubble-one {
@@ -1095,12 +1109,32 @@ a {
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
-  min-height: 320px;
+  min-height: 0;
   background: linear-gradient(160deg, #e8e3ff, #fff 58%);
 }
 
 .bento-widget .bento-copy {
-  max-width: 720px;
+  display: grid;
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+  align-items: end;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.bento-widget-heading .feature-icon {
+  margin-bottom: 1.25rem;
+}
+
+.bento-widget-body {
+  padding-bottom: 0.2rem;
+}
+
+.bento-widget-body p {
+  max-width: 470px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.8;
 }
 
 .status-pill {
@@ -1434,7 +1468,7 @@ a {
   .steps { gap: 0; }
   .bento-grid { grid-template-columns: 1fr; }
   .bento { min-height: 520px; }
-  .bento-widget { min-height: 320px; }
+  .bento-widget { min-height: 0; }
   .privacy-grid { grid-template-columns: 1fr; }
   .privacy-copy { max-width: 700px; }
   .privacy-list { width: min(780px, 100%); margin-left: auto; }
@@ -1465,13 +1499,20 @@ a {
   .bubble-large { left: 1%; width: 76px; height: 76px; }
   .scroll-cue { display: none; }
   .promise h2, .section-heading h2, .privacy h2, .download h2 { font-size: clamp(2.45rem, 12vw, 4rem); }
+  .features .section-heading h2 { font-size: clamp(2.35rem, 10.5vw, 2.65rem); }
+  .feature-title-break,
+  .notification-title-break,
+  .widget-title-break { display: initial; }
   .privacy h2 { font-size: clamp(2.45rem, 11vw, 3.2rem); }
-  .download h2 { font-size: clamp(2.7rem, 12vw, 3rem); }
+  .download h2 { font-size: clamp(2.4rem, 10vw, 2.7rem); }
   .steps { grid-template-columns: 1fr; gap: 2.5rem; }
   .steps li { padding: 0; }
+  .bento-widget .bento-copy { grid-template-columns: 1fr; gap: 1.35rem; }
+  .bento-widget-body { padding-bottom: 0; }
+  .bento-widget .status-pill { margin-top: 1rem; }
   .step-visual { height: 170px; }
   .bento { min-height: 520px; border-radius: 2.2rem; }
-  .bento-widget { min-height: 320px; }
+  .bento-widget { min-height: 0; }
   .feature-bubble-one { left: 7%; width: 150px; }
   .feature-bubble-two { right: 6%; width: 128px; }
   .feature-bubble-three { width: 112px; }

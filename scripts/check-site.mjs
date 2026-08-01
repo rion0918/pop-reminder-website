@@ -20,7 +20,7 @@ const requiredFiles = [
   'migrations/0001_create_waitlist_signups.sql',
   'public/assets/app-icon.png',
   'public/assets/icon-192.png',
-  'public/assets/app-screen-home-dream.png',
+  'public/assets/app-screen-home-dream-hd.png',
   'public/assets/og-image-dream.png',
 ];
 
@@ -33,10 +33,11 @@ const requiredPatterns = [
   ['structured data', /application\/ld\+json/],
   ['single primary heading', /<h1\b/],
   ['app-style reminder bubbles', /data-reminder-bubble/],
-  ['Dream hero screen', /app-screen-home-dream\.png/],
+  ['high-resolution Dream hero screen', /app-screen-home-dream-hd\.png/],
   ['generic widget copy', /class="overline">Widget</],
   ['waitlist form', /data-waitlist-form/],
   ['waitlist privacy note', /メールアドレスの登録はありません/],
+  ['developer X account', /https:\/\/x\.com\/rioi7_0918/],
   ['reduced motion styles', /prefers-reduced-motion/],
 ];
 
