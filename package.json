@@ -1,0 +1,13 @@
+{
+  "name": "pop-reminder-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "『ふわっと。』公式プロモーションサイト",
+  "scripts": {
+    "dev": "npm run build && python3 -m http.server 4173 -d dist",
+    "build": "node scripts/build.mjs",
+    "check": "node --check main.js && node scripts/check-site.mjs",
+    "verify": "npm run check && npm run build",
+    "deploy:cloudflare": "npm run verify && npx --yes wrangler@4.118.0 pages deploy dist --project-name pop-reminder --branch main --commit-dirty=true"
+  }
+}
