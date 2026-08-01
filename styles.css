@@ -793,9 +793,11 @@ a {
   color: var(--muted);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 2.1;
+  text-wrap: pretty;
+  word-break: auto-phrase;
 }
 
-.promise-copy-break { display: inline; }
+.promise-copy-line { display: block; }
 
 .how {
   background: var(--paper);
@@ -1484,7 +1486,7 @@ a {
   .hero-copy { padding-top: 2rem; }
   .hero h1 { font-size: clamp(3rem, 14.5vw, 4.5rem); }
   .hero-lead br { display: none; }
-  .promise-copy-break { display: none; }
+  .promise-copy-line { display: inline; }
   .hero-actions { flex-direction: column; }
   .hero-actions .button { width: min(100%, 330px); }
   .hero-visual { min-height: 540px; margin-top: -0.5rem; }
