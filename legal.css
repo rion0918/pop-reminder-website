@@ -39,6 +39,10 @@
   line-height: 1.08;
 }
 
+.legal-title-part {
+  white-space: nowrap;
+}
+
 .legal-date {
   margin: 1rem 0 3rem;
   color: var(--muted);
@@ -71,4 +75,5 @@
 @media (max-width: 560px) {
   .legal-main { padding-top: 3rem; }
   .legal-article { padding: 2.2rem 1.35rem; }
+  .legal-article h1 { font-size: clamp(2.2rem, 11vw, 2.75rem); }
 }
