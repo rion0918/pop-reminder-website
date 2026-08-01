@@ -8,7 +8,7 @@
     <title>ふわっと。｜忘れる前に数秒で残すリマインダーアプリ</title>
     <meta
       name="description"
-      content="忘れたくないことを、ふわっと泡にして残せるシンプルなリマインダーアプリ。数秒で追加でき、前日と当日にお知らせします。ログイン不要・端末内保存。"
+      content="忘れたくないことを、ふわっと泡にして残せるシンプルなリマインダーアプリ。数秒で追加でき、前日と当日にお知らせします。公開前の待機リストを受付中です。"
     />
     <meta
       name="keywords"
@@ -28,7 +28,7 @@
     <meta property="og:title" content="ふわっと。｜忘れる前に、数秒だけ。" />
     <meta
       property="og:description"
-      content="忘れたくないことを、泡にしてそっと残す。ログイン不要のシンプルなリマインダーアプリ。"
+      content="忘れたくないことを、泡にしてそっと残す。公開前の匿名待機リストを受付中です。"
     />
     <meta property="og:url" content="https://pop-reminder.pages.dev/" />
     <meta
@@ -42,7 +42,7 @@
     <meta name="twitter:title" content="ふわっと。｜忘れる前に、数秒だけ。" />
     <meta
       name="twitter:description"
-      content="忘れたくないことを、泡にしてそっと残すリマインダーアプリ。"
+      content="忘れたくないことを、泡にしてそっと残すリマインダーアプリ。公開前の待機リストを受付中です。"
     />
     <meta
       name="twitter:image"
@@ -111,6 +111,14 @@
                   "@type": "Answer",
                   "text": "指定した当日の時刻と、設定した前日の時刻にお知らせします。"
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "待機リストにメール登録は必要ですか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "必要ありません。匿名の参加数とSNSの流入元だけを需要調査に利用します。"
+                }
               }
             ]
           }
@@ -132,7 +140,7 @@
           <a href="#privacy">安心設計</a>
           <a href="#faq">よくある質問</a>
         </div>
-        <a class="nav-cta pressable" href="#download">公開情報</a>
+        <a class="nav-cta pressable" href="#waitlist">待機リスト</a>
       </nav>
     </header>
 
@@ -147,8 +155,8 @@
               予定をやさしく見守る、シンプルなリマインダーです。
             </p>
             <div class="hero-actions">
-              <a class="button button-primary pressable" href="#download">
-                <span>リリース情報を見る</span>
+              <a class="button button-primary pressable" href="#waitlist">
+                <span>リリースを待つ</span>
                 <svg aria-hidden="true" viewBox="0 0 20 20">
                   <path d="m7.5 4.5 5 5-5 5" />
                 </svg>
@@ -398,27 +406,40 @@
             <summary>ホーム画面のウィジェットはありますか？<span aria-hidden="true"></span></summary>
             <p>予定の確認・追加・削除ができるホーム画面ウィジェットを予定しています。</p>
           </details>
+          <details data-reveal>
+            <summary>待機リストにメール登録は必要ですか？<span aria-hidden="true"></span></summary>
+            <p>必要ありません。匿名の参加数とSNSの流入元だけを需要調査に利用し、同じブラウザからいつでも参加を取り消せます。</p>
+          </details>
         </div>
       </section>
 
-      <section class="download section" id="download" aria-labelledby="download-title">
+      <section class="download section" id="waitlist" aria-labelledby="waitlist-title">
         <div class="download-card shell" data-reveal>
           <div class="download-orb" aria-hidden="true"><img src="assets/app-icon.png" alt="" /></div>
-          <p class="section-label">Coming soon</p>
-          <h2 id="download-title">思い出すことは、<br />ふわっと。に任せよう。</h2>
-          <p>Androidから先行公開予定。リリースまで、もう少しだけお待ちください。</p>
-          <div class="download-actions">
-            <a
-              class="button button-primary pressable"
-              href="https://github.com/rion0918/pop-reminder"
-              target="_blank"
-              rel="noreferrer"
-            >
-              開発状況を見る
-              <svg aria-hidden="true" viewBox="0 0 20 20"><path d="m7.5 4.5 5 5-5 5" /></svg>
-            </a>
-            <span class="release-note">Google Playで近日公開</span>
-          </div>
+          <p class="section-label">Waiting list</p>
+          <h2 id="waitlist-title">リリースを、<br />ふわっと待とう。</h2>
+          <p>「ちょっと気になる」と思っていただけたら、ボタンで教えてください。公開前の需要調査に、匿名の1件として反映します。</p>
+          <form class="waitlist-form" data-waitlist-form data-state="idle">
+            <label class="waitlist-honeypot" aria-hidden="true" hidden>
+              ウェブサイト
+              <input name="website" type="text" tabindex="-1" autocomplete="off" />
+            </label>
+            <div class="waitlist-actions">
+              <button class="button button-primary pressable waitlist-submit" type="submit" data-waitlist-submit>
+                <span data-waitlist-button-label>リリースを待つ</span>
+                <svg class="waitlist-button-icon" aria-hidden="true" viewBox="0 0 20 20">
+                  <circle cx="10" cy="10" r="6.5" />
+                  <path d="M7.5 10.2 9.3 12l3.6-4" />
+                </svg>
+              </button>
+              <button class="waitlist-cancel" type="button" data-waitlist-cancel hidden>参加を取り消す</button>
+            </div>
+            <p class="waitlist-status" role="status" aria-live="polite" aria-atomic="true" data-waitlist-status></p>
+            <p class="waitlist-note">
+              メールアドレスの登録はありません。このブラウザの匿名IDとSNSの流入元だけを利用します。
+              <a href="privacy.html">取り扱いを見る</a>
+            </p>
+          </form>
         </div>
       </section>
     </main>

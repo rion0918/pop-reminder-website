@@ -10,6 +10,8 @@
 | ビルドコマンド | `npm run build` |
 | 出力ディレクトリ | `dist` |
 | Pages方式 | Direct Upload |
+| Functions | `/api/*`のみ |
+| D1 | `pop-reminder-waitlist` |
 
 このPagesプロジェクトはWranglerから作成したDirect Upload方式です。Cloudflareの仕様上、同じプロジェクトを後からネイティブGit連携へ変更することはできません。そのため、本番URLを維持した自動デプロイにはGitHub ActionsからWranglerを実行します。
 
@@ -19,7 +21,7 @@
 2. `npm run verify`を実行する。
 3. Pull Requestを作成し、CI結果と表示を確認する。
 4. `main`へマージする。
-5. GitHub Actionsが`dist/`を生成し、`pop-reminder`へデプロイする。
+5. GitHub ActionsがD1マイグレーションを適用し、`dist/`とPages Functionsを`pop-reminder`へデプロイする。
 6. 本番URLと法務ページ、OGP画像を確認する。
 
 ## GitHub Actionsに必要なSecrets
@@ -29,15 +31,16 @@
 | Secret | 内容 |
 | --- | --- |
 | `CLOUDFLARE_ACCOUNT_ID` | CloudflareアカウントID |
-| `CLOUDFLARE_API_TOKEN` | Cloudflare PagesへのEdit権限だけを持つAPIトークン |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare PagesとD1へのEdit権限を持つAPIトークン |
 
-APIトークンはCloudflareダッシュボードの `My Profile > API Tokens` からCustom Tokenとして作成します。権限は対象アカウントの `Cloudflare Pages: Edit` に限定します。トークン値をファイル、Issue、ログ、コミットへ保存しないでください。
+APIトークンはCloudflareダッシュボードの `My Profile > API Tokens` からCustom Tokenとして作成します。権限は対象アカウントの `Cloudflare Pages: Edit` と `D1: Edit` に限定します。トークン値をファイル、Issue、ログ、コミットへ保存しないでください。
 
 ## 手動デプロイ
 
 GitHub Actionsが利用できない場合のみ、Cloudflareへログイン済みの端末から実行します。
 
 ```bash
+npm run db:migrate:remote
 npm run deploy:cloudflare
 ```
 
@@ -51,6 +54,7 @@ curl -fsSIL https://pop-reminder.pages.dev/privacy
 curl -fsSIL https://pop-reminder.pages.dev/terms
 curl -fsSIL https://pop-reminder.pages.dev/assets/og-image.png
 curl -fsSIL https://pop-reminder.pages.dev/sitemap.xml
+curl -fsSI https://pop-reminder.pages.dev/api/waitlist
 ```
 
 確認項目:
@@ -58,6 +62,7 @@ curl -fsSIL https://pop-reminder.pages.dev/sitemap.xml
 - トップ、プライバシーポリシー、利用規約がHTTP 200になる。
 - OGP画像のContent-Typeが`image/png`になる。
 - sitemapのContent-Typeが`application/xml`になる。
+- 待機リストAPIへのGETがHTTP 405になり、登録数を公開しない。
 - 本番HTMLのcanonicalが本番URLを指す。
 - デスクトップとモバイルで主要コピーとCTAが欠けない。
 - ブラウザコンソールにエラーがない。
@@ -84,4 +89,7 @@ curl -fsSIL https://pop-reminder.pages.dev/sitemap.xml
 
 - [Cloudflare Pages: Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)
 - [Cloudflare Pages: Direct Upload with CI](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/)
+- [Cloudflare Pages Functions](https://developers.cloudflare.com/pages/functions/)
+- [Cloudflare Pages FunctionsのD1バインディング](https://developers.cloudflare.com/pages/functions/bindings/)
+- [Cloudflare D1 migrations](https://developers.cloudflare.com/d1/reference/migrations/)
 - [Cloudflare Pages: Git integration](https://developers.cloudflare.com/pages/configuration/git-integration/)

@@ -1,4 +1,5 @@
 dist/
 output/
 .playwright-cli/
+.wrangler/
 .DS_Store

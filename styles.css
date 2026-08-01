@@ -285,7 +285,7 @@ a {
 }
 
 .hero-actions,
-.download-actions {
+.waitlist-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -302,6 +302,8 @@ a {
   padding: 0.75rem 1.35rem;
   border: 1px solid transparent;
   border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 0.9rem;
   font-weight: 750;
 }
@@ -1258,7 +1260,101 @@ a {
 }
 
 .download-orb img { border-radius: inherit; }
-.release-note { color: var(--muted); font-size: 0.76rem; font-weight: 650; }
+
+.waitlist-form {
+  position: relative;
+  max-width: 620px;
+  margin-top: 2.25rem;
+}
+
+.waitlist-actions {
+  margin-top: 0;
+}
+
+.waitlist-submit {
+  min-width: 14.5rem;
+}
+
+.waitlist-submit:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.waitlist-submit:disabled:hover {
+  background: var(--ink);
+  box-shadow: 0 12px 28px rgba(31, 44, 76, 0.2);
+  transform: none;
+}
+
+.waitlist-button-icon {
+  width: 1.15rem;
+  transition: transform 500ms var(--spring);
+}
+
+.waitlist-form[data-state="joined"] .waitlist-submit {
+  background: #4965c4;
+  box-shadow: 0 12px 28px rgba(73, 101, 196, 0.22);
+}
+
+.waitlist-form[data-state="joined"] .waitlist-button-icon {
+  transform: scale(1.12);
+}
+
+.waitlist-submit[aria-busy="true"] .waitlist-button-icon {
+  animation: waitlist-pulse 900ms ease-in-out infinite alternate;
+}
+
+.waitlist-cancel {
+  padding: 0.65rem 0.5rem;
+  border: 0;
+  color: #53617d;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(83, 97, 125, 0.3);
+  text-underline-offset: 0.25rem;
+}
+
+.waitlist-cancel:hover {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+
+.waitlist-status {
+  min-height: 1.7rem;
+  margin: 0.9rem 0 0;
+  color: #465576;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.waitlist-note {
+  max-width: 560px;
+  margin: 0.6rem 0 0 !important;
+  color: #778199 !important;
+  font-size: 0.72rem;
+  line-height: 1.8;
+}
+
+.waitlist-note a {
+  color: #4c5e86;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(76, 94, 134, 0.26);
+  text-underline-offset: 0.2rem;
+}
+
+.waitlist-honeypot {
+  display: none;
+}
+
+@keyframes waitlist-pulse {
+  from { opacity: 0.45; transform: scale(0.86); }
+  to { opacity: 1; transform: scale(1.06); }
+}
 
 .site-footer {
   padding: 5rem 0 max(3rem, env(safe-area-inset-bottom));
@@ -1364,7 +1460,7 @@ a {
   .download { padding-top: 0; }
   .download-card { width: calc(100% - 1.5rem); min-height: 690px; padding: 3.2rem 1.5rem; }
   .download-orb { right: -1rem; bottom: -5rem; width: min(82vw, 390px); }
-  .download-actions { align-items: flex-start; flex-direction: column; }
+  .waitlist-actions { align-items: flex-start; flex-direction: column; }
   .footer-grid { grid-template-columns: 1fr; align-items: start; }
   .footer-links { justify-content: flex-start; }
   .copyright { text-align: left; }
