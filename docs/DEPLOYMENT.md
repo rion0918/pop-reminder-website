@@ -17,7 +17,7 @@
 
 1. 作業ブランチで変更する。
 2. `npm run verify`を実行する。
-3. Pull Requestを作成し、CIとプレビューを確認する。
+3. Pull Requestを作成し、CI結果と表示を確認する。
 4. `main`へマージする。
 5. GitHub Actionsが`dist/`を生成し、`pop-reminder`へデプロイする。
 6. 本番URLと法務ページ、OGP画像を確認する。
