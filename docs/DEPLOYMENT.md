@@ -52,7 +52,7 @@ npm run deploy:cloudflare
 curl -fsSIL https://pop-reminder.pages.dev/
 curl -fsSIL https://pop-reminder.pages.dev/privacy
 curl -fsSIL https://pop-reminder.pages.dev/terms
-curl -fsSIL https://pop-reminder.pages.dev/assets/og-image.png
+curl -fsSIL https://pop-reminder.pages.dev/assets/og-image-dream.png
 curl -fsSIL https://pop-reminder.pages.dev/sitemap.xml
 curl -fsSI https://pop-reminder.pages.dev/api/waitlist
 ```

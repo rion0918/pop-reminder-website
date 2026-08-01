@@ -18,7 +18,7 @@
 - `robots.txt`: クロール許可とsitemap URL
 - `sitemap.xml`: インデックス対象URL
 - `site.webmanifest`: アプリ名、テーマ色、アイコン
-- `public/assets/og-image.png`: 1200×630の共有画像
+- `public/assets/og-image-dream.png`: 1731×909の共有画像（ドリームテーマ）
 
 ## 公開前チェック
 
