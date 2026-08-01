@@ -28,6 +28,7 @@ const requiredPatterns = [
   ['Open Graph image', /property="og:image"/],
   ['structured data', /application\/ld\+json/],
   ['single primary heading', /<h1\b/],
+  ['app-style reminder bubbles', /data-reminder-bubble/],
   ['reduced motion styles', /prefers-reduced-motion/],
 ];
 
@@ -49,6 +50,7 @@ for (const [label, pattern] of requiredPatterns) {
 
 const h1Count = (html.match(/<h1\b/g) ?? []).length;
 if (h1Count !== 1) failures.push(`Expected one h1, found ${h1Count}`);
+if (/reminder-chip/.test(html)) failures.push('Reminder examples must use bubbles, not cards');
 
 const structuredData = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
 try {

@@ -166,15 +166,33 @@
           <div class="hero-visual" data-reveal data-tilt aria-label="ふわっと。のアプリ画面">
             <div class="orbit orbit-one" aria-hidden="true"></div>
             <div class="orbit orbit-two" aria-hidden="true"></div>
-            <div class="reminder-chip chip-one" aria-hidden="true">
-              <span class="chip-dot chip-dot-pink"></span>
-              <span>牛乳を買う</span>
-              <small>今日 18:00</small>
+            <div
+              class="app-bubble app-bubble-today hero-reminder hero-reminder-one"
+              data-reminder-bubble
+              aria-hidden="true"
+            >
+              <div class="app-bubble-float">
+                <div class="app-bubble-surface">
+                  <span class="app-bubble-mist"></span>
+                  <span class="app-bubble-highlight app-bubble-highlight-large"></span>
+                  <span class="app-bubble-highlight app-bubble-highlight-small"></span>
+                  <span class="app-bubble-copy"><b>牛乳を買う</b><small>今日 18:00</small></span>
+                </div>
+              </div>
             </div>
-            <div class="reminder-chip chip-two" aria-hidden="true">
-              <span class="chip-dot chip-dot-blue"></span>
-              <span>本を返す</span>
-              <small>明日 8:00</small>
+            <div
+              class="app-bubble app-bubble-tomorrow hero-reminder hero-reminder-two"
+              data-reminder-bubble
+              aria-hidden="true"
+            >
+              <div class="app-bubble-float">
+                <div class="app-bubble-surface">
+                  <span class="app-bubble-mist"></span>
+                  <span class="app-bubble-highlight app-bubble-highlight-large"></span>
+                  <span class="app-bubble-highlight app-bubble-highlight-small"></span>
+                  <span class="app-bubble-copy"><b>本を返す</b><small>明日 8:00</small></span>
+                </div>
+              </div>
             </div>
             <div class="phone" data-phone>
               <span class="phone-side phone-side-left" aria-hidden="true"></span>
@@ -234,7 +252,16 @@
           <li data-reveal>
             <span class="step-number">03</span>
             <div class="step-visual step-pop" aria-hidden="true">
-              <div><span></span><b>本を返す</b><small>明日 8:00</small></div>
+              <div class="app-bubble app-bubble-tomorrow step-bubble" data-reminder-bubble>
+                <div class="app-bubble-float">
+                  <div class="app-bubble-surface">
+                    <span class="app-bubble-mist"></span>
+                    <span class="app-bubble-highlight app-bubble-highlight-large"></span>
+                    <span class="app-bubble-highlight app-bubble-highlight-small"></span>
+                    <span class="app-bubble-copy"><b>本を返す</b><small>明日 8:00</small></span>
+                  </div>
+                </div>
+              </div>
             </div>
             <h3>泡にして手放す</h3>
             <p>前日と当日にお知らせ。あとは、ふわっと。に任せて大丈夫です。</p>
@@ -261,9 +288,36 @@
                 <p>今日に近いほどあたたかく、先の予定ほど涼やかに。開くだけで、次にすることが見えてきます。</p>
               </div>
               <div class="bubble-board" aria-hidden="true">
-                <div class="demo-bubble demo-one"><b>牛乳を買う</b><small>今日 18:00</small></div>
-                <div class="demo-bubble demo-two"><b>薬を飲む</b><small>明日 8:00</small></div>
-                <div class="demo-bubble demo-three"><b>本を返す</b><small>7月24日</small></div>
+                <div class="app-bubble app-bubble-today feature-bubble feature-bubble-one" data-reminder-bubble>
+                  <div class="app-bubble-float">
+                    <div class="app-bubble-surface">
+                      <span class="app-bubble-mist"></span>
+                      <span class="app-bubble-highlight app-bubble-highlight-large"></span>
+                      <span class="app-bubble-highlight app-bubble-highlight-small"></span>
+                      <span class="app-bubble-copy"><b>牛乳を買う</b><small>今日 18:00</small></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="app-bubble app-bubble-tomorrow feature-bubble feature-bubble-two" data-reminder-bubble>
+                  <div class="app-bubble-float">
+                    <div class="app-bubble-surface">
+                      <span class="app-bubble-mist"></span>
+                      <span class="app-bubble-highlight app-bubble-highlight-large"></span>
+                      <span class="app-bubble-highlight app-bubble-highlight-small"></span>
+                      <span class="app-bubble-copy"><b>薬を飲む</b><small>明日 8:00</small></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="app-bubble app-bubble-later feature-bubble feature-bubble-three" data-reminder-bubble>
+                  <div class="app-bubble-float">
+                    <div class="app-bubble-surface">
+                      <span class="app-bubble-mist"></span>
+                      <span class="app-bubble-highlight app-bubble-highlight-large"></span>
+                      <span class="app-bubble-highlight app-bubble-highlight-small"></span>
+                      <span class="app-bubble-copy"><b>本を返す</b><small>7月24日</small></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </article>
 

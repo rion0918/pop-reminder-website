@@ -64,4 +64,5 @@ npm run dev
 独自ドメインへ変更する場合は、URLを一括で差し替えてから公開してください。詳しい手順は次を参照してください。
 
 - [デプロイ運用](docs/DEPLOYMENT.md)
+- [デザイン実装ガイド](docs/DESIGN.md)
 - [SEO運用](docs/SEO.md)
