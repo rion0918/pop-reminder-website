@@ -21,7 +21,7 @@ const requiredFiles = [
   'public/assets/app-icon.png',
   'public/assets/icon-192.png',
   'public/assets/app-screen-home-dream-hd.png',
-  'public/assets/og-image-dream.png',
+  'public/assets/og-image-fuwatto.png',
 ];
 
 const requiredPatterns = [
@@ -29,7 +29,7 @@ const requiredPatterns = [
   ['page title', /<title>[^<]+<\/title>/],
   ['meta description', /<meta\s+name="description"/],
   ['fuwatto canonical URL', /rel="canonical" href="https:\/\/fuwatto\.pages\.dev\/"/],
-  ['Open Graph image', /property="og:image"/],
+  ['latest Open Graph image', /property="og:image"[\s\S]*?og-image-fuwatto\.png/],
   ['structured data', /application\/ld\+json/],
   ['single primary heading', /<h1\b/],
   ['app-style reminder bubbles', /data-reminder-bubble/],

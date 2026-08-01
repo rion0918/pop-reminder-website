@@ -58,7 +58,7 @@ npm run deploy:cloudflare
 curl -fsSIL https://fuwatto.pages.dev/
 curl -fsSIL https://fuwatto.pages.dev/privacy
 curl -fsSIL https://fuwatto.pages.dev/terms
-curl -fsSIL https://fuwatto.pages.dev/assets/og-image-dream.png
+curl -fsSIL https://fuwatto.pages.dev/assets/og-image-fuwatto.png
 curl -fsSIL https://fuwatto.pages.dev/sitemap.xml
 curl -fsSI https://fuwatto.pages.dev/api/waitlist
 ```

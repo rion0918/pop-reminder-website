@@ -18,7 +18,7 @@
 - `robots.txt`: クロール許可とsitemap URL
 - `sitemap.xml`: インデックス対象URL
 - `site.webmanifest`: アプリ名、テーマ色、アイコン
-- `public/assets/og-image-dream.png`: 1731×909の共有画像（ドリームテーマ）
+- `public/assets/og-image-fuwatto.png`: 1731×909の共有画像（最新の本番ヒーロー）
 
 ## 公開前チェック
 
