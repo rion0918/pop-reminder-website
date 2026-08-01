@@ -15,8 +15,6 @@ const requiredFiles = [
   'public/assets/app-icon.png',
   'public/assets/icon-192.png',
   'public/assets/app-screen-home.png',
-  'public/assets/app-screen-detail.jpg',
-  'public/assets/widget-preview.png',
   'public/assets/og-image.png',
 ];
 
@@ -29,7 +27,18 @@ const requiredPatterns = [
   ['structured data', /application\/ld\+json/],
   ['single primary heading', /<h1\b/],
   ['app-style reminder bubbles', /data-reminder-bubble/],
+  ['generic widget copy', /class="overline">Widget</],
   ['reduced motion styles', /prefers-reduced-motion/],
+];
+
+const removedHomepagePatterns = [
+  ['detail feature card', /bento-detail/],
+  ['hero trust list', /trust-list/],
+  ['hero eyebrow', /Simple reminder app/i],
+  ['promise eyebrow', /A little less to remember/i],
+  ['tracking SDK feature', /広告・解析SDKなし/],
+  ['widget preview image', /widget-preview\.png/],
+  ['Android-specific widget label', /Android widget/i],
 ];
 
 const failures = [];
@@ -46,6 +55,10 @@ for (const [label, pattern] of requiredPatterns) {
   if (!pattern.test(html) && !(label === 'reduced motion styles' && pattern.test(await readFile('styles.css', 'utf8')))) {
     failures.push(`Missing ${label}`);
   }
+}
+
+for (const [label, pattern] of removedHomepagePatterns) {
+  if (pattern.test(html)) failures.push(`Unexpected ${label}`);
 }
 
 const h1Count = (html.match(/<h1\b/g) ?? []).length;

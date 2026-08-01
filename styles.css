@@ -242,7 +242,6 @@ a {
   padding-top: 1rem;
 }
 
-.eyebrow,
 .section-label {
   margin: 0 0 1.4rem;
   color: var(--blue-deep);
@@ -250,20 +249,6 @@ a {
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.eyebrow-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: #8e9ff0;
-  box-shadow: 0 0 0 6px rgba(142, 159, 240, 0.13);
 }
 
 .hero h1,
@@ -280,7 +265,10 @@ a {
   font-size: clamp(3.15rem, 5.5vw, 4.8rem);
 }
 
-.hero h1 span {
+.hero-title-accent {
+  display: inline-block;
+  font-size: 0.86em;
+  white-space: nowrap;
   color: transparent;
   background: linear-gradient(102deg, #405fc8 5%, #7e72d7 46%, #d684a6 96%);
   -webkit-background-clip: text;
@@ -349,28 +337,6 @@ a {
 .button-secondary:hover {
   background: #fff;
   transform: translateY(-2px);
-}
-
-.trust-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem 1.3rem;
-  margin: 1.65rem 0 0;
-  padding: 0;
-  color: #69748c;
-  font-size: 0.76rem;
-  font-weight: 650;
-  list-style: none;
-}
-
-.trust-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.trust-list span {
-  color: var(--blue);
 }
 
 .hero-visual {
@@ -1005,7 +971,6 @@ a {
 }
 
 .feature-icon-violet { color: #7756c6; background: #f0eaff; }
-.feature-icon-pink { color: #bd6282; background: #fff0f5; }
 .feature-icon-blue { color: #3473a5; background: #e5f4ff; }
 
 .overline {
@@ -1110,34 +1075,16 @@ a {
 .notification-card.back { top: 9%; opacity: 0.58; transform: translateX(-50%) scale(0.92); }
 .notification-card.front { top: 42%; transform: translateX(-50%); }
 
-.bento-detail {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  align-items: center;
-  background: linear-gradient(145deg, #fff7f8, #fff 45%, #f4f1ff);
-}
-
-.detail-device {
-  align-self: end;
-  width: 84%;
-  max-height: 470px;
-  margin-left: 2rem;
-  overflow: hidden;
-  border: 7px solid #252730;
-  border-bottom: 0;
-  border-radius: 2.5rem 2.5rem 0 0;
-  box-shadow: 0 24px 60px rgba(54, 56, 82, 0.2);
-  transform: rotate(-3deg);
-}
-
-.detail-device img {
-  width: 100%;
-}
-
 .bento-widget {
+  grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
+  min-height: 320px;
   background: linear-gradient(160deg, #ecf7ff, #fff 58%);
+}
+
+.bento-widget .bento-copy {
+  max-width: 720px;
 }
 
 .status-pill {
@@ -1150,12 +1097,6 @@ a {
   background: rgba(224, 244, 255, 0.65);
   font-size: 0.68rem;
   font-weight: 750;
-}
-
-.widget-wrap {
-  width: 88%;
-  margin: auto auto -0.8rem;
-  filter: drop-shadow(0 24px 34px rgba(45, 102, 148, 0.17));
 }
 
 .privacy {
@@ -1372,13 +1313,13 @@ a {
   .hero { min-height: auto; padding-bottom: 7rem; }
   .hero-grid { grid-template-columns: 1fr; text-align: center; }
   .hero-copy { padding-top: 3rem; }
-  .eyebrow, .hero-actions, .trust-list { justify-content: center; }
+  .hero-actions { justify-content: center; }
   .hero-lead { margin-inline: auto; }
   .hero-visual { min-height: 610px; }
   .steps { gap: 0; }
   .bento-grid { grid-template-columns: 1fr; }
   .bento { min-height: 520px; }
-  .bento-detail { grid-template-columns: 0.85fr 1.15fr; }
+  .bento-widget { min-height: 320px; }
   .privacy-grid { grid-template-columns: 1fr; }
   .privacy-copy { max-width: 700px; }
   .privacy-list { width: min(780px, 100%); margin-left: auto; }
@@ -1414,9 +1355,7 @@ a {
   .steps li { padding: 0; }
   .step-visual { height: 170px; }
   .bento { min-height: 520px; border-radius: 2.2rem; }
-  .bento-detail { display: flex; flex-direction: column-reverse; }
-  .bento-detail .bento-copy { padding-bottom: 1.5rem; }
-  .detail-device { width: 64%; max-height: 310px; margin: 0 auto; }
+  .bento-widget { min-height: 320px; }
   .feature-bubble-one { left: 7%; width: 150px; }
   .feature-bubble-two { right: 6%; width: 128px; }
   .feature-bubble-three { width: 112px; }
@@ -1440,7 +1379,6 @@ a {
   .phone { width: 252px; }
   .hero-reminder-one { left: -2%; width: 132px; }
   .hero-reminder-two { right: -3%; width: 112px; }
-  .trust-list { gap: 0.6rem 0.9rem; }
   .bento-copy { padding: 2rem 1.5rem; }
 }
 
