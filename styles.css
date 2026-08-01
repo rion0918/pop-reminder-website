@@ -787,12 +787,14 @@ a {
 }
 
 .promise p:last-child {
-  max-width: 630px;
+  max-width: 760px;
   margin: 2rem auto 0;
   color: var(--muted);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   line-height: 2.1;
 }
+
+.promise-copy-break { display: inline; }
 
 .how {
   background: var(--paper);
@@ -806,6 +808,10 @@ a {
 .section-heading.centered {
   margin-inline: auto;
   text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .section-heading.centered h2 { white-space: nowrap; }
 }
 
 .section-heading > p:last-child {
@@ -1038,6 +1044,13 @@ a {
   background: linear-gradient(160deg, #f2edff, #fff 52%, #f3f6ff);
 }
 
+@media (min-width: 1200px) {
+  .bento-notify h3 {
+    font-size: clamp(1.8rem, 2.2vw, 2.25rem);
+    white-space: nowrap;
+  }
+}
+
 .notification-stack {
   position: relative;
   flex: 1;
@@ -1121,8 +1134,9 @@ a {
 .privacy-grid {
   position: relative;
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(4rem, 10vw, 9rem);
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+  max-width: 1040px;
+  gap: clamp(4rem, 8vw, 7rem);
 }
 
 .privacy .section-label { color: #aebcff; }
@@ -1332,11 +1346,15 @@ a {
 }
 
 .waitlist-note {
-  max-width: 560px;
+  max-width: 690px;
   margin: 0.6rem 0 0 !important;
   color: #778199 !important;
   font-size: 0.72rem;
   line-height: 1.8;
+}
+
+@media (min-width: 981px) {
+  .waitlist-note { white-space: nowrap; }
 }
 
 .waitlist-note a {
@@ -1431,6 +1449,7 @@ a {
   .hero-copy { padding-top: 2rem; }
   .hero h1 { font-size: clamp(3rem, 14.5vw, 4.5rem); }
   .hero-lead br { display: none; }
+  .promise-copy-break { display: none; }
   .hero-actions { flex-direction: column; }
   .hero-actions .button { width: min(100%, 330px); }
   .hero-visual { min-height: 540px; margin-top: -0.5rem; }
@@ -1461,6 +1480,7 @@ a {
   .download-card { width: calc(100% - 1.5rem); min-height: 690px; padding: 3.2rem 1.5rem; }
   .download-orb { right: -1rem; bottom: -5rem; width: min(82vw, 390px); }
   .waitlist-actions { align-items: flex-start; flex-direction: column; }
+  .waitlist-note { white-space: normal; }
   .footer-grid { grid-template-columns: 1fr; align-items: start; }
   .footer-links { justify-content: flex-start; }
   .copyright { text-align: left; }

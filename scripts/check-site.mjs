@@ -20,7 +20,7 @@ const requiredFiles = [
   'migrations/0001_create_waitlist_signups.sql',
   'public/assets/app-icon.png',
   'public/assets/icon-192.png',
-  'public/assets/app-screen-home.png',
+  'public/assets/app-screen-home-blue.png',
   'public/assets/og-image.png',
 ];
 
@@ -33,6 +33,7 @@ const requiredPatterns = [
   ['structured data', /application\/ld\+json/],
   ['single primary heading', /<h1\b/],
   ['app-style reminder bubbles', /data-reminder-bubble/],
+  ['blue hero screen', /app-screen-home-blue\.png/],
   ['generic widget copy', /class="overline">Widget</],
   ['waitlist form', /data-waitlist-form/],
   ['waitlist privacy note', /メールアドレスの登録はありません/],
@@ -47,6 +48,8 @@ const removedHomepagePatterns = [
   ['tracking SDK feature', /広告・解析SDKなし/],
   ['widget preview image', /widget-preview\.png/],
   ['Android-specific widget label', /Android widget/i],
+  ['privacy intro copy', /覚えておきたいことは、とても個人的な情報です/],
+  ['GitHub footer link', />GitHub<\/a>/],
 ];
 
 const failures = [];
