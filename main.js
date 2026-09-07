@@ -23,8 +23,7 @@ if (reducedMotion.matches || !('IntersectionObserver' in window)) {
     { rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
   );
 
-  revealItems.forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index % 3, 2) * 70}ms`;
+  revealItems.forEach((item) => {
     revealObserver.observe(item);
   });
 }
@@ -154,7 +153,7 @@ if (waitlistForm) {
 
   const renderJoined = (joined) => {
     waitlistForm.dataset.state = joined ? 'joined' : 'idle';
-    buttonLabel.textContent = joined ? '待機リストに参加済み' : 'リリースを待つ';
+    buttonLabel.textContent = joined ? '待機リストに参加済み' : '使ってみたい';
     submitButton.disabled = joined;
     submitButton.setAttribute('aria-busy', 'false');
     cancelButton.hidden = !joined;

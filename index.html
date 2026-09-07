@@ -2,25 +2,41 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#F5F3FF" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light" />
-    <title>ふわっと。｜忘れる前に数秒で残すリマインダーアプリ</title>
+    <title>ふわっと。｜忘れる前に、ふわっと。</title>
     <meta
       name="description"
-      content="予定に入れようと思ったまま忘れてしまう人へ。思いついたことを数秒で泡にして残し、前日と当日に知らせるシンプルなリマインダーアプリです。"
+      content="頭に浮かんだ「あれ、やらなきゃ」を、数秒で泡に。前日と当日の通知で思い出せるリマインダーアプリ「ふわっと。」。公開前の待機リストを受付中。"
     />
     <meta
       name="keywords"
       content="ふわっと,リマインダーアプリ,タスク管理,通知アプリ,予定管理,ToDo,Androidアプリ"
     />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1"
+    />
     <meta name="author" content="rion0918" />
     <link rel="canonical" href="https://fuwatto.pages.dev/" />
     <link rel="manifest" href="site.webmanifest" />
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/icon-192.png"
+    />
     <link rel="apple-touch-icon" href="assets/app-icon.png" />
-    <link rel="preload" as="image" href="assets/app-screen-home-dream-hd.png" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/app-screen-home-dream-hd.png"
+      fetchpriority="high"
+    />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
@@ -37,7 +53,10 @@
     />
     <meta property="og:image:width" content="1731" />
     <meta property="og:image:height" content="909" />
-    <meta property="og:image:alt" content="泡のように予定を残すリマインダーアプリ『ふわっと。』" />
+    <meta
+      property="og:image:alt"
+      content="泡のように予定を残すリマインダーアプリ『ふわっと。』"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ふわっと。｜忘れる前に、数秒だけ。" />
     <meta
@@ -94,15 +113,7 @@
                 "name": "アカウント登録は必要ですか？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "必要ありません。アプリを開いてすぐに使い始められます。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "登録した予定は外部へ送信されますか？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "現時点では外部サーバーへの同期はありません。リマインダーと設定は端末内に保存されます。"
+                  "text": "必要ありません。アプリを開いて、すぐにリマインダーを追加できます。"
                 }
               },
               {
@@ -110,7 +121,23 @@
                 "name": "いつ通知されますか？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "指定した当日の時刻と、設定した前日の時刻にお知らせします。"
+                  "text": "指定した当日の時刻と、設定した前日の時刻にお知らせします。前日の通知時刻は設定から変更できます。通知には端末の通知許可が必要です。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "どの端末で使えますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Androidでの先行公開を予定しています。iOS版は主要機能の確認後に公開予定です。ホーム画面ウィジェットはAndroid向けです。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "登録した予定は外部へ送信されますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "リマインダーは端末内に保存され、開発者のサーバーへの同期はありません。匿名の利用状況は同意した場合にのみ送信します。アプリ内購入に関する情報の取り扱いも含め、プライバシーポリシーをご覧ください。"
                 }
               },
               {
@@ -118,7 +145,7 @@
                 "name": "待機リストにメール登録は必要ですか？",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "必要ありません。匿名の参加数とSNSの流入元だけを需要調査に利用します。"
+                  "text": "必要ありません。「使ってみたい」気持ちを匿名で伝えられます。同じブラウザから参加を取り消すこともできます。個別のメール通知は行いません。リリースのお知らせは開発者のXでご確認ください。"
                 }
               }
             ]
@@ -129,341 +156,537 @@
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
-
     <header class="site-header" data-header>
       <nav class="nav shell" aria-label="メインナビゲーション">
-        <a class="brand" href="#top" aria-label="ふわっと。トップへ">
-          <img src="assets/icon-192.png" alt="" width="34" height="34" />
-          <span>ふわっと。</span>
-        </a>
+        <a class="brand" href="#top" aria-label="ふわっと。トップへ"
+          ><img src="assets/icon-192.png" alt="" width="36" height="36" /><span
+            >ふわっと。</span
+          ></a
+        >
         <div class="nav-links">
-          <a href="#features">できること</a>
-          <a href="#privacy">安心設計</a>
-          <a href="#faq">よくある質問</a>
+          <a href="#features">できること</a><a href="#how-it-works">使い方</a
+          ><a href="#faq">よくある質問</a>
         </div>
-        <a class="nav-cta pressable" href="#waitlist">待機リスト</a>
+        <a class="nav-cta" href="#waitlist"
+          >リリースを待つ
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+        ></a>
       </nav>
     </header>
-
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-aurora" aria-hidden="true"></div>
-        <div class="hero-grid shell">
-          <div class="hero-copy" data-reveal>
-            <h1 id="hero-title">忘れる前に、<br /><span class="hero-title-accent">ふわっと残そう。</span></h1>
-            <p class="hero-lead">
-              <span class="copy-phrase">頭に浮かんだその瞬間、</span><span class="copy-phrase">数秒で泡にして置いておく。</span><br class="desktop-only" />
-              <span class="copy-phrase">予定をやさしく見守る、</span><span class="copy-phrase">シンプルなリマインダーです。</span>
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary pressable" href="#waitlist">
-                <span>リリースを待つ</span>
-                <svg aria-hidden="true" viewBox="0 0 20 20">
-                  <path d="m7.5 4.5 5 5-5 5" />
-                </svg>
-              </a>
-              <a class="button button-secondary pressable" href="#how-it-works">使い方を見る</a>
-            </div>
-          </div>
-
-          <div class="hero-visual" data-reveal data-tilt aria-label="ふわっと。のアプリ画面">
-            <div class="orbit orbit-one" aria-hidden="true"></div>
-            <div class="orbit orbit-two" aria-hidden="true"></div>
-            <div
-              class="app-bubble app-bubble-today hero-reminder hero-reminder-one"
-              data-reminder-bubble
-              aria-hidden="true"
+      <section class="hero shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span
+            >思いつきを、泡にするリマインダー
+          </p>
+          <h1 id="hero-title">忘れる前に、<br /><span>ふわっと。</span></h1>
+          <p class="hero-lead">
+            頭に浮かんだ「あれ、やらなきゃ」。<br />数秒で残して、あとは手放そう。<br />覚えておくことを、ひとつ減らすアプリです。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#waitlist"
+              >リリースを待つ
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" /></svg></a
+            ><a class="text-link" href="#how-it-works"
+              >使い方を見る <span aria-hidden="true">↗</span></a
             >
-              <div class="app-bubble-float">
-                <div class="app-bubble-surface">
-                  <span class="app-bubble-mist"></span>
-                  <span class="app-bubble-highlight app-bubble-highlight-large"></span>
-                  <span class="app-bubble-highlight app-bubble-highlight-small"></span>
-                  <span class="app-bubble-copy"><b>牛乳を買う</b><small>今日 18:00</small></span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="app-bubble app-bubble-tomorrow hero-reminder hero-reminder-two"
-              data-reminder-bubble
-              aria-hidden="true"
-            >
-              <div class="app-bubble-float">
-                <div class="app-bubble-surface">
-                  <span class="app-bubble-mist"></span>
-                  <span class="app-bubble-highlight app-bubble-highlight-large"></span>
-                  <span class="app-bubble-highlight app-bubble-highlight-small"></span>
-                  <span class="app-bubble-copy"><b>本を返す</b><small>明日 8:00</small></span>
-                </div>
-              </div>
-            </div>
-            <div class="phone" data-phone>
-              <span class="phone-side phone-side-left" aria-hidden="true"></span>
-              <span class="phone-side phone-side-right" aria-hidden="true"></span>
-              <div class="phone-screen">
-                <img
-                  src="assets/app-screen-home-dream-hd.png"
-                  alt="ふわっと。のホーム画面。大きなシャボン玉をタップして最初のリマインドを追加できる"
-                  width="1704"
-                  height="3692"
-                  fetchpriority="high"
-                />
-              </div>
-            </div>
-            <div class="hero-bubble bubble-small" aria-hidden="true"></div>
-            <div class="hero-bubble bubble-large" aria-hidden="true"></div>
           </div>
-        </div>
-        <a class="scroll-cue" href="#promise" aria-label="次のセクションへ">
-          <span>Scroll</span>
-          <i aria-hidden="true"></i>
-        </a>
-      </section>
-
-      <section class="promise section" id="promise" aria-labelledby="promise-title">
-        <div class="narrow" data-reveal>
-          <h2 id="promise-title">覚えておくことを、<br />ひとつ減らす。</h2>
-          <p>
-            <span class="promise-copy-line">忘れないように予定へ入れようと思っても、</span><span class="promise-copy-line">日付や時間を細かく決めるのが少し面倒で、つい後回しにしてしまう。</span><span class="promise-copy-line">そんなとき、思いついた言葉を数秒で残して、あとは手放せるように。</span><span class="promise-copy-line">ふわっと。は、忘れやすさを責めずにそっと支えます。</span>
+          <p class="hero-note">
+            ただいま開発中
+            <span aria-hidden="true">/</span> メール登録なしで参加できます
           </p>
         </div>
+        <div class="hero-visual" data-tilt>
+          <div class="visual-panel" aria-hidden="true">
+            <span class="panel-label"
+              >LESS TO REMEMBER.<br />MORE ROOM FOR YOU.</span
+            ><span class="panel-word">fuwatto.</span>
+          </div>
+          <div class="phone" data-phone>
+            <div class="phone-screen">
+              <img
+                src="assets/app-screen-home-dream-hd.png"
+                alt="ふわっと。のホーム画面。大きな泡をタップしてリマインダーを追加できます。"
+                width="1704"
+                height="3692"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+          <div
+            class="app-bubble app-bubble-today hero-reminder-one"
+            data-reminder-bubble
+            aria-hidden="true"
+          >
+            <div class="app-bubble-float">
+              <div class="app-bubble-surface">
+                <span class="app-bubble-mist"></span
+                ><span
+                  class="app-bubble-highlight app-bubble-highlight-large"
+                ></span
+                ><span
+                  class="app-bubble-highlight app-bubble-highlight-small"
+                ></span
+                ><span class="app-bubble-copy"
+                  ><b>牛乳を買う</b><small>今日 18:00</small></span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="app-bubble app-bubble-tomorrow hero-reminder-two"
+            data-reminder-bubble
+            aria-hidden="true"
+          >
+            <div class="app-bubble-float">
+              <div class="app-bubble-surface">
+                <span class="app-bubble-mist"></span
+                ><span
+                  class="app-bubble-highlight app-bubble-highlight-large"
+                ></span
+                ><span
+                  class="app-bubble-highlight app-bubble-highlight-small"
+                ></span
+                ><span class="app-bubble-copy"
+                  ><b>本を返す</b><small>明日 8:00</small></span
+                >
+              </div>
+            </div>
+          </div>
+          <span class="visual-sticker" aria-hidden="true"
+            >あたまに、<br />余白を。</span
+          >
+          <p class="visual-caption">アプリ画面は開発中のものです</p>
+        </div>
+        <div class="hero-bottom">
+          <span>A LITTLE REMINDER, A LIGHTER DAY.</span
+          ><a href="#promise"
+            >SCROLL TO DISCOVER <span aria-hidden="true">↓</span></a
+          >
+        </div>
       </section>
 
-      <section class="how section shell" id="how-it-works" aria-labelledby="how-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-label">How it works</p>
-          <h2 id="how-title">思いついてから、<br />たったの<br class="mobile-heading-break" />3ステップ。</h2>
+      <section
+        class="promise section"
+        id="promise"
+        aria-labelledby="promise-title"
+      >
+        <div class="shell promise-grid">
+          <div>
+            <p class="section-label">01 — A lighter day</p>
+            <h2 id="promise-title">
+              覚えておくより、<br /><span class="accent">今を楽しもう。</span>
+            </h2>
+          </div>
+          <div class="promise-copy">
+            <p>
+              帰りに買うもの。明日、返す本。<br />大切だけれど、ずっと頭に置いておかなくていいこと。
+            </p>
+            <p>
+              思いついた瞬間に、ふわっと残す。<br />必要なときに、そっと思い出せる。<br />その小さな安心が、毎日を少し軽くします。
+            </p>
+          </div>
         </div>
-        <ol class="steps">
-          <li data-reveal>
-            <span class="step-number">01</span>
-            <div class="step-visual step-type" aria-hidden="true">
-              <span>忘れたくないことを入力</span><i></i>
+      </section>
+
+      <section
+        class="features section shell"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="section-label">02 — Small things, thoughtfully made</p>
+            <h2 id="features-title">小さな予定に、<br />ちょうどいい。</h2>
+          </div>
+          <p>
+            たくさん管理するよりも、<br />ひとつ、気軽に残せることを大切に。
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card feature-bubbles" data-reveal>
+            <div class="card-top">
+              <p class="overline">Bubble board</p>
+              <span class="card-number">01</span>
             </div>
-            <h3>ひとこと入力</h3>
-            <p>長い設定は不要。忘れたくないことを、そのまま言葉にします。</p>
-          </li>
-          <li data-reveal>
-            <span class="step-number">02</span>
-            <div class="step-visual step-date" aria-hidden="true">
-              <span>今日</span><span class="active">明日</span><span>明後日</span>
-            </div>
-            <h3>日付と時刻を選ぶ</h3>
-            <p>今日・明日・明後日、またはカレンダーから。朝昼夕夜の時刻もワンタップ。</p>
-          </li>
-          <li data-reveal>
-            <span class="step-number">03</span>
-            <div class="step-visual step-pop" aria-hidden="true">
-              <div class="app-bubble app-bubble-tomorrow step-bubble" data-reminder-bubble>
+            <h3>予定を、泡に。<br />気持ちを、軽く。</h3>
+            <p>
+              今日に近い予定ほど、あたたかい色に。<br />色づく泡で、次にすることが見えてきます。
+            </p>
+            <div
+              class="bubble-board"
+              aria-label="今日・明日・先の予定を色分けする表示例"
+            >
+              <div
+                class="app-bubble app-bubble-today feature-bubble-one"
+                data-reminder-bubble
+                aria-hidden="true"
+              >
                 <div class="app-bubble-float">
                   <div class="app-bubble-surface">
-                    <span class="app-bubble-mist"></span>
-                    <span class="app-bubble-highlight app-bubble-highlight-large"></span>
-                    <span class="app-bubble-highlight app-bubble-highlight-small"></span>
-                    <span class="app-bubble-copy"><b>本を返す</b><small>明日 8:00</small></span>
+                    <span class="app-bubble-mist"></span
+                    ><span
+                      class="app-bubble-highlight app-bubble-highlight-large"
+                    ></span
+                    ><span
+                      class="app-bubble-highlight app-bubble-highlight-small"
+                    ></span
+                    ><span class="app-bubble-copy"
+                      ><b>花に水をあげる</b><small>今日 18:00</small></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="app-bubble app-bubble-tomorrow feature-bubble-two"
+                data-reminder-bubble
+                aria-hidden="true"
+              >
+                <div class="app-bubble-float">
+                  <div class="app-bubble-surface">
+                    <span class="app-bubble-mist"></span
+                    ><span
+                      class="app-bubble-highlight app-bubble-highlight-large"
+                    ></span
+                    ><span
+                      class="app-bubble-highlight app-bubble-highlight-small"
+                    ></span
+                    ><span class="app-bubble-copy"
+                      ><b>本を返す</b><small>明日 8:00</small></span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="app-bubble app-bubble-later feature-bubble-three"
+                data-reminder-bubble
+                aria-hidden="true"
+              >
+                <div class="app-bubble-float">
+                  <div class="app-bubble-surface">
+                    <span class="app-bubble-mist"></span
+                    ><span
+                      class="app-bubble-highlight app-bubble-highlight-large"
+                    ></span
+                    ><span
+                      class="app-bubble-highlight app-bubble-highlight-small"
+                    ></span
+                    ><span class="app-bubble-copy"
+                      ><b>映画の予約</b><small>9月20日</small></span
+                    >
                   </div>
                 </div>
               </div>
             </div>
-            <h3>泡にして手放す</h3>
-            <p>前日と当日にお知らせ。あとは、ふわっと。に任せて大丈夫です。</p>
-          </li>
-        </ol>
-      </section>
-
-      <section class="features section" id="features" aria-labelledby="features-title">
-        <div class="shell">
-          <div class="section-heading centered" data-reveal>
-            <p class="section-label">Designed to feel lighter</p>
-            <h2 id="features-title">予定が、泡のように<br class="feature-title-break" />ふわっと浮かぶ。</h2>
-            <p>今日に近い予定ほどあたたかく、先の予定ほど涼やかに。泡の色と動きで、次にすることが自然と目に入ります。</p>
-          </div>
-
-          <div class="bento-grid">
-            <article class="bento bento-bubbles" data-reveal>
-              <div class="bento-copy">
-                <span class="feature-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" /><path d="M8.5 8.5c1-1 2.2-1.5 3.5-1.5" /></svg>
-                </span>
-                <p class="overline">Bubble board</p>
-                <h3>予定は、泡になる。</h3>
-                <p>今日に近いほどあたたかく、先の予定ほど涼やかに。開くだけで、次にすることが見えてきます。</p>
-              </div>
-              <div class="bubble-board" aria-hidden="true">
-                <div class="app-bubble app-bubble-today feature-bubble feature-bubble-one" data-reminder-bubble>
-                  <div class="app-bubble-float">
-                    <div class="app-bubble-surface">
-                      <span class="app-bubble-mist"></span>
-                      <span class="app-bubble-highlight app-bubble-highlight-large"></span>
-                      <span class="app-bubble-highlight app-bubble-highlight-small"></span>
-                      <span class="app-bubble-copy"><b>牛乳を買う</b><small>今日 18:00</small></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="app-bubble app-bubble-tomorrow feature-bubble feature-bubble-two" data-reminder-bubble>
-                  <div class="app-bubble-float">
-                    <div class="app-bubble-surface">
-                      <span class="app-bubble-mist"></span>
-                      <span class="app-bubble-highlight app-bubble-highlight-large"></span>
-                      <span class="app-bubble-highlight app-bubble-highlight-small"></span>
-                      <span class="app-bubble-copy"><b>薬を飲む</b><small>明日 8:00</small></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="app-bubble app-bubble-later feature-bubble feature-bubble-three" data-reminder-bubble>
-                  <div class="app-bubble-float">
-                    <div class="app-bubble-surface">
-                      <span class="app-bubble-mist"></span>
-                      <span class="app-bubble-highlight app-bubble-highlight-large"></span>
-                      <span class="app-bubble-highlight app-bubble-highlight-small"></span>
-                      <span class="app-bubble-copy"><b>本を返す</b><small>7月24日</small></span>
-                    </div>
-                  </div>
+            <p class="card-foot">忘れたくないことが、ひと目でわかる。</p>
+          </article>
+          <article class="feature-card feature-notify" data-reveal>
+            <div class="card-top">
+              <p class="overline">Gentle notifications</p>
+              <span class="card-number">02</span>
+            </div>
+            <h3>思い出すのは、<br />ちょうどいいとき。</h3>
+            <p>
+              前日と当日に、そっとお知らせ。<br />前日の通知時刻も、自分のペースに。
+            </p>
+            <div class="notification-stack" aria-label="通知の表示例">
+              <div class="notification-card">
+                <img src="assets/icon-192.png" alt="" width="40" height="40" />
+                <div>
+                  <span class="notification-app"
+                    >ふわっと。<span>いま</span></span
+                  ><b>牛乳を買う</b><span>帰り道に、忘れずに。</span>
                 </div>
               </div>
-            </article>
-
-            <article class="bento bento-notify" data-reveal>
-              <div class="bento-copy">
-                <span class="feature-icon feature-icon-violet" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 8h18c0-1-3-1-3-8" /><path d="M10 20h4" /></svg>
-                </span>
-                <p class="overline">Gentle notifications</p>
-                <h3>ちょうどいい時に、<br class="notification-title-break" />そっと。</h3>
-                <p>前日と当日の2回通知。前日のお知らせ時刻は、自分に合う時間へ調整できます。</p>
-              </div>
-              <div class="notification-stack" aria-hidden="true">
-                <div class="notification-card back">
-                  <img src="assets/icon-192.png" alt="" /><span><b>ふわっと。</b><small>明日の予定があります</small></span>
-                </div>
-                <div class="notification-card front">
-                  <img src="assets/icon-192.png" alt="" /><span><b>牛乳を買う</b><small>今日 18:00</small></span><time>いま</time>
-                </div>
-              </div>
-            </article>
-
-            <article class="bento bento-widget" data-reveal>
-              <div class="bento-copy">
-                <div class="bento-widget-heading">
-                  <span class="feature-icon feature-icon-blue" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2" /><rect x="14" y="3" width="7" height="7" rx="2" /><rect x="3" y="14" width="7" height="7" rx="2" /><rect x="14" y="14" width="7" height="7" rx="2" /></svg>
-                  </span>
-                  <p class="overline">Widget</p>
-                  <h3>ホーム画面から、<br class="widget-title-break" />ひと目で。</h3>
-                </div>
-                <div class="bento-widget-body">
-                  <p>アプリを開かなくても、ホーム画面で予定を確認。追加や削除もすばやく行えるウィジェットを予定しています。</p>
-                  <span class="status-pill">ウィジェット対応予定</span>
-                </div>
-              </div>
-            </article>
-          </div>
+            </div>
+          </article>
+          <article class="feature-card feature-widget" data-reveal>
+            <div class="card-top">
+              <p class="overline">Widget</p>
+              <span class="card-number">03</span>
+            </div>
+            <h3>いつもの画面で、<br />さっと確認。</h3>
+            <p>
+              アプリを開かず、ホーム画面から。<br />予定の確認も、完了操作も。
+            </p>
+            <span class="status-pill">Android ウィジェット</span>
+          </article>
         </div>
       </section>
 
-      <section class="privacy section" id="privacy" aria-labelledby="privacy-title">
-        <div class="privacy-glow" aria-hidden="true"></div>
-        <div class="shell privacy-grid">
-          <div class="privacy-copy" data-reveal>
-            <p class="section-label">Private by default</p>
-            <h2 id="privacy-title">あなたの予定は、<br />あなたの端末<br class="mobile-heading-break" />だけに。</h2>
-            <a class="text-link" href="privacy.html">プライバシーポリシーを読む <span aria-hidden="true">→</span></a>
+      <section
+        class="how section"
+        id="how-it-works"
+        aria-labelledby="how-title"
+      >
+        <div class="shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">03 — Just three little steps</p>
+              <h2 id="how-title">思いついたら、<br />もう残せる。</h2>
+            </div>
+            <p>忘れてしまう前に。<br />むずかしい設定は、いりません。</p>
           </div>
-          <ul class="privacy-list" aria-label="プライバシー機能">
+          <ol class="steps">
             <li data-reveal>
-              <span aria-hidden="true">01</span>
-              <div><h3>アカウント不要</h3><p>名前もメールアドレスも入力せず、すぐに始められます。</p></div>
+              <div class="step-top">
+                <span class="step-number">01</span><span>WRITE</span>
+              </div>
+              <div class="step-visual input-preview" aria-hidden="true">
+                <span>本を返す</span><i></i><span class="input-plus">＋</span>
+              </div>
+              <h3>ひとこと、書く。</h3>
+              <p>
+                忘れたくないことを、そのまま。<br />きれいにまとめなくても大丈夫。
+              </p>
             </li>
             <li data-reveal>
-              <span aria-hidden="true">02</span>
-              <div><h3>外部同期なし</h3><p>登録した予定と設定は、お使いの端末内に保存されます。</p></div>
+              <div class="step-top">
+                <span class="step-number">02</span><span>CHOOSE</span>
+              </div>
+              <div class="step-visual date-preview" aria-hidden="true">
+                <span>今日</span><span class="selected">明日</span
+                ><span>明後日</span>
+              </div>
+              <h3>いつかを、選ぶ。</h3>
+              <p>
+                日付と、朝・昼・夕・夜の時間帯。<br />ワンタップで、さっと決まります。
+              </p>
             </li>
-          </ul>
+            <li data-reveal>
+              <div class="step-top">
+                <span class="step-number">03</span><span>LET GO</span>
+              </div>
+              <div class="step-visual step-done" aria-hidden="true">
+                <span class="done-mark">✓</span
+                ><span>ふわっと、残しました。</span>
+              </div>
+              <h3>あとは、手放す。</h3>
+              <p>
+                予定は泡になって、待っています。<br />必要なときは、通知におまかせ。
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        class="privacy section shell"
+        id="privacy"
+        aria-labelledby="privacy-title"
+      >
+        <div class="privacy-panel">
+          <div class="privacy-copy">
+            <p class="section-label">04 — Your reminders, yours</p>
+            <h2 id="privacy-title">気軽に使えて、<br />ちゃんと安心。</h2>
+            <a class="text-link" href="privacy.html"
+              >プライバシーについて
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <div class="privacy-points">
+            <article>
+              <span aria-hidden="true">↗</span>
+              <div>
+                <h3>アカウント登録なし</h3>
+                <p>
+                  名前もメールアドレスもいりません。<br />アプリを開いて、すぐに使い始められます。
+                </p>
+              </div>
+            </article>
+            <article>
+              <span aria-hidden="true">⌁</span>
+              <div>
+                <h3>予定は、端末の中に</h3>
+                <p>
+                  リマインダーはお使いの端末に保存。<br />開発者のサーバーへの同期はありません。
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="faq section shell" id="faq" aria-labelledby="faq-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-label">Questions</p>
-          <h2 id="faq-title">よくある質問。</h2>
+        <div>
+          <p class="section-label">05 — Good to know</p>
+          <h2 id="faq-title">気になること。</h2>
+          <p class="faq-intro">
+            使い始める前に、<br />知っておきたいことをまとめました。
+          </p>
         </div>
         <div class="faq-list">
-          <details data-reveal>
-            <summary>アカウント登録は必要ですか？<span aria-hidden="true"></span></summary>
-            <p>必要ありません。アプリを開いて、すぐにリマインダーを追加できます。</p>
+          <details>
+            <summary>
+              アカウント登録は必要ですか？<span aria-hidden="true"></span>
+            </summary>
+            <p>
+              必要ありません。アプリを開いて、すぐにリマインダーを追加できます。
+            </p>
           </details>
-          <details data-reveal>
-            <summary>登録した予定は外部へ送信されますか？<span aria-hidden="true"></span></summary>
-            <p>現時点では外部サーバーへの同期はありません。リマインダーと設定は、お使いの端末内に保存されます。</p>
+          <details>
+            <summary>
+              いつ通知されますか？<span aria-hidden="true"></span>
+            </summary>
+            <p>
+              指定した当日の時刻と、設定した前日の時刻にお知らせします。前日の通知時刻は設定から変更できます。通知には端末の通知許可が必要です。
+            </p>
           </details>
-          <details data-reveal>
-            <summary>いつ通知されますか？<span aria-hidden="true"></span></summary>
-            <p>指定した当日の時刻と、設定した前日の時刻にお知らせします。前日のお知らせ時刻は設定から変更できます。</p>
+          <details>
+            <summary>
+              どの端末で使えますか？<span aria-hidden="true"></span>
+            </summary>
+            <p>
+              Androidでの先行公開を予定しています。iOS版は主要機能の確認後に公開予定です。ホーム画面ウィジェットはAndroid向けです。
+            </p>
           </details>
-          <details data-reveal>
-            <summary>どの端末で使えますか？<span aria-hidden="true"></span></summary>
-            <p>Androidでの先行公開を予定しています。iOS版は主要機能の確認後に公開予定です。</p>
+          <details>
+            <summary>
+              登録した予定は外部へ送信されますか？<span
+                aria-hidden="true"
+              ></span>
+            </summary>
+            <p>
+              リマインダーは端末内に保存され、開発者のサーバーへの同期はありません。匿名の利用状況は同意した場合にのみ送信します。アプリ内購入に関する情報の取り扱いも含め、<a
+                href="privacy.html"
+                >プライバシーポリシー</a
+              >をご覧ください。
+            </p>
           </details>
-          <details data-reveal>
-            <summary>ホーム画面のウィジェットはありますか？<span aria-hidden="true"></span></summary>
-            <p>予定の確認・追加・削除ができるホーム画面ウィジェットを予定しています。</p>
-          </details>
-          <details data-reveal>
-            <summary>待機リストにメール登録は必要ですか？<span aria-hidden="true"></span></summary>
-            <p>必要ありません。匿名の参加数とSNSの流入元だけを需要調査に利用し、同じブラウザからいつでも参加を取り消せます。</p>
+          <details>
+            <summary>
+              待機リストにメール登録は必要ですか？<span
+                aria-hidden="true"
+              ></span>
+            </summary>
+            <p>
+              必要ありません。「使ってみたい」気持ちを匿名で伝えられます。同じブラウザから参加を取り消すこともできます。個別のメール通知は行いません。リリースのお知らせは<a
+                href="https://x.com/rioi7_0918"
+                target="_blank"
+                rel="noopener noreferrer"
+                >開発者のX</a
+              >でご確認ください。
+            </p>
           </details>
         </div>
       </section>
 
-      <section class="download section" id="waitlist" aria-labelledby="waitlist-title">
-        <div class="download-card shell" data-reveal>
-          <div class="download-orb" aria-hidden="true"><img src="assets/app-icon.png" alt="" /></div>
-          <p class="section-label">Waiting list</p>
-          <h2 id="waitlist-title">リリースを、<br /><span class="download-title-line">ふわっと待とう。</span></h2>
-          <p>もし「使ってみたい」と感じていただけたら、ボタンでそっと教えてください。そのひとつが、これからも開発を続ける大きな励みになります。</p>
-          <form class="waitlist-form" data-waitlist-form data-state="idle">
-            <label class="waitlist-honeypot" aria-hidden="true" hidden>
-              ウェブサイト
-              <input name="website" type="text" tabindex="-1" autocomplete="off" />
-            </label>
-            <div class="waitlist-actions">
-              <button class="button button-primary pressable waitlist-submit" type="submit" data-waitlist-submit>
-                <span data-waitlist-button-label>リリースを待つ</span>
-                <svg class="waitlist-button-icon" aria-hidden="true" viewBox="0 0 20 20">
-                  <circle cx="10" cy="10" r="6.5" />
-                  <path d="M7.5 10.2 9.3 12l3.6-4" />
-                </svg>
-              </button>
-              <button class="waitlist-cancel" type="button" data-waitlist-cancel hidden>参加を取り消す</button>
-            </div>
-            <p class="waitlist-status" role="status" aria-live="polite" aria-atomic="true" data-waitlist-status></p>
-            <p class="waitlist-note">
-              メールアドレスの登録はありません。このブラウザの匿名IDとSNSの流入元だけを利用します。
-              <a href="privacy.html">取り扱いを見る</a>
+      <section
+        class="download section"
+        id="waitlist"
+        aria-labelledby="waitlist-title"
+      >
+        <div class="shell download-inner">
+          <div>
+            <p class="section-label">
+              <span class="status-dot" aria-hidden="true"></span> COMING SOON
             </p>
-          </form>
+            <h2 id="waitlist-title">毎日に、<br />ふわっと余白を。</h2>
+            <p class="download-lead">
+              「使ってみたい」が、開発の励みになります。<br />あなたも、リリースを一緒に待ちませんか。
+            </p>
+            <form class="waitlist-form" data-waitlist-form data-state="idle">
+              <noscript
+                ><p>
+                  参加にはJavaScriptを有効にしてください。公開情報は<a
+                    href="https://x.com/rioi7_0918"
+                    >開発者のX</a
+                  >でも確認できます。
+                </p>
+                <style>
+                  .waitlist-actions {
+                    display: none;
+                  }
+                </style></noscript
+              >
+              <label class="waitlist-honeypot" aria-hidden="true" hidden>
+                ウェブサイト
+                <input
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </label>
+              <div class="waitlist-actions">
+                <button
+                  class="button button-primary pressable waitlist-submit"
+                  type="submit"
+                  data-waitlist-submit
+                >
+                  <span data-waitlist-button-label>使ってみたい</span>
+                  <svg
+                    class="waitlist-button-icon"
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                  >
+                    <circle cx="10" cy="10" r="6.5" />
+                    <path d="M7.5 10.2 9.3 12l3.6-4" />
+                  </svg>
+                </button>
+                <button
+                  class="waitlist-cancel"
+                  type="button"
+                  data-waitlist-cancel
+                  hidden
+                >
+                  参加を取り消す
+                </button>
+              </div>
+              <p
+                class="waitlist-status"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+                data-waitlist-status
+              ></p>
+              <p class="waitlist-note">
+                メールアドレスの登録はありません。匿名ID・流入元・参加日時を記録します。公開のお知らせは開発者のXでご確認ください。
+                <a href="privacy.html">取り扱いを見る</a>
+              </p>
+            </form>
+          </div>
+          <div class="download-brand" aria-hidden="true">
+            <img
+              src="assets/app-icon.png"
+              alt=""
+              width="240"
+              height="240"
+              loading="lazy"
+            /><span>ふわっと。</span
+            ><small>A LITTLE REMINDER.<br />A LIGHTER DAY.</small>
+          </div>
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div>
-          <a class="brand footer-brand" href="#top">
-            <img src="assets/icon-192.png" alt="" width="32" height="32" />
-            <span>ふわっと。</span>
-          </a>
-          <p>忘れる前に、数秒だけ。</p>
-        </div>
+    <footer class="site-footer shell">
+      <div class="footer-top">
+        <a class="brand" href="#top"
+          ><img src="assets/icon-192.png" alt="" width="32" height="32" /><span
+            >ふわっと。</span
+          ></a
+        >
         <div class="footer-links">
-          <a href="privacy.html">プライバシーポリシー</a>
-          <a href="terms.html">利用規約</a>
-          <a href="https://x.com/rioi7_0918" target="_blank" rel="me noopener noreferrer" aria-label="開発者のXアカウントを新しいタブで開く">X（開発者）</a>
+          <a href="privacy.html">プライバシーポリシー</a
+          ><a href="terms.html">利用規約</a
+          ><a
+            href="https://x.com/rioi7_0918"
+            target="_blank"
+            rel="me noopener noreferrer"
+            >X（開発者） ↗</a
+          >
         </div>
-        <p class="copyright">© <span data-year>2026</span> ふわっと。</p>
+      </div>
+      <div class="footer-bottom">
+        <p>忘れる前に、数秒だけ。</p>
+        <p>© <span data-year>2026</span> ふわっと。</p>
+        <a href="#top">BACK TO TOP ↑</a>
       </div>
     </footer>
-
     <script src="main.js" defer></script>
   </body>
 </html>
