@@ -10,7 +10,7 @@
 
 ## 必要な環境
 
-- Node.js 24
+- Node.js 24.22.1（`.node-version`に合わせる。2026年10月21日のセキュリティ修正を含む）
 - npm
 - Cloudflare Wranglerのログイン（D1の集計と手動デプロイ）
 
